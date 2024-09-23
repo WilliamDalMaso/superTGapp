@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Hotel Sonne Parking Space</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Hotel Sonne Parking Space</h1>
+
+        <div id="form-container">
+            <form id="userForm">
+                <!-- Step 1: First Name -->
+                <div class="step" id="step-1">
+                    <label for="firstName">Enter your first name:</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                    <button type="button" onclick="nextStep(1)">Next</button>
+                </div>
+
+                <!-- Step 2: Last Name -->
+                <div class="step" id="step-2" style="display:none;">
+                    <label for="lastName">Enter your last name:</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                    <button type="button" onclick="nextStep(2)">Next</button>
+                </div>
+
+                <!-- Step 3: Check-in Date -->
+                <div class="step" id="step-3" style="display:none;">
+                    <label for="checkIn">Enter check-in date (DD/MM/YYYY):</label>
+                    <input type="text" id="checkIn" name="checkIn" placeholder="DD/MM/YYYY" required>
+                    <button type="button" onclick="nextStep(3)">Next</button>
+                </div>
+
+                <!-- Step 4: Check-out Date -->
+                <div class="step" id="step-4" style="display:none;">
+                    <label for="checkOut">Enter check-out date (DD/MM/YYYY):</label>
+                    <input type="text" id="checkOut" name="checkOut" placeholder="DD/MM/YYYY" required>
+                    <button type="button" onclick="nextStep(4)">Next</button>
+                </div>
+
+                <!-- Step 5: Car Model -->
+                <div class="step" id="step-5" style="display:none;">
+                    <label for="carModel">Enter car model:</label>
+                    <input type="text" id="carModel" name="carModel" required>
+                    <button type="button" onclick="nextStep(5)">Next</button>
+                </div>
+
+                <!-- Step 6: Message -->
+                <div class="step" id="step-6" style="display:none;">
+                    <label for="message">Message (optional):</label>
+                    <textarea id="message" name="message"></textarea>
+                    <button type="button" onclick="nextStep(6)">Next</button>
+                </div>
+
+                <!-- Step 7: Confirm Information -->
+                <div class="step" id="step-7" style="display:none;">
+                    <h2>Confirm Information</h2>
+                    <p><strong>First Name:</strong> <span id="confirmFirstName"></span></p>
+                    <p><strong>Last Name:</strong> <span id="confirmLastName"></span></p>
+                    <p><strong>Check-in Date:</strong> <span id="confirmCheckIn"></span></p>
+                    <p><strong>Check-out Date:</strong> <span id="confirmCheckOut"></span></p>
+                    <p><strong>Car Model:</strong> <span id="confirmCarModel"></span></p>
+                    <p><strong>Message:</strong> <span id="confirmMessage"></span></p>
+                    <button type="button" onclick="submitForm()">Confirm</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="successMessage" style="display:none;">
+            <h2>Success!</h2>
+            <p>Your parking reservation is confirmed.</p>
+        </div>
+    </div>
+
+    <script src="static/js/script.js"></script>
+</body>
+</html>
